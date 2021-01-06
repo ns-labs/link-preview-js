@@ -231,7 +231,6 @@ function parseTextResponse(
   contentType?: string,
 ) {
   const doc = cheerio.load(body);
-  console.warn("1. doc", doc);
 
 
   return {
@@ -253,7 +252,6 @@ const getChannelID = function (doc) {
   var channel_id = null;
   // yt-uix-button yt-uix-button-size-default yt-uix-button-subscribe-branded yt-uix-button-has-icon no-icon-markup yt-uix-subscription-button yt-can-buffer yt-uix-servicelink vve-check - class name
   channel_id = doc('button[class="yt-uix-button yt-uix-button-size-default yt-uix-button-subscribe-branded yt-uix-button-has-icon no-icon-markup yt-uix-subscription-button yt-can-buffer yt-uix-servicelink vve-check"]').attr('data-channel-external-id');
-  console.warn("2. channel_id", channel_id);
   return channel_id;
 };
 
